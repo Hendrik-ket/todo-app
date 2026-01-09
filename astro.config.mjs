@@ -5,4 +5,5 @@ export default defineConfig({
     enabled: false
   },
   site: 'https://Hendrik-ket.github.io',
+  base: 'todo-app',
 });
