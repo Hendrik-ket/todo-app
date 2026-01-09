@@ -1,0 +1,245 @@
+body {
+  font-family: Arial, sans-serif;
+  background: rgba(24, 20, 26);
+  color: white;
+}
+
+
+nav.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(99, 15, 142);
+  border-radius: 10px;
+  max-width: 75%;
+  margin: 1rem auto;
+  flex-wrap: wrap;
+}
+
+nav .links {
+  display: flex;
+  gap: 40px;
+}
+
+nav .links button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.menu-btn {
+  display: none;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#overlay, #overlay2 {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#form, #form2 {
+  background: #1e1e1e;
+  padding: 2rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 300px;
+}
+
+#form input, #form select,
+#form2 input {
+  padding: .5rem;
+  border-radius: 5px;
+  border: none;
+}
+
+#form button, #form2 button {
+  padding: .5rem;
+  border-radius: 5px;
+  border: none;
+  background: rgba(46,172,255);
+  color: white;
+  cursor: pointer;
+}
+
+#form button:hover,
+#form2 button:hover {
+  background: rgba(253,62,129);
+}
+
+li {
+  margin: 0px auto 20px auto;
+  display: grid;
+  background: #62108E;
+  background: linear-gradient(120deg, rgba(98, 16, 142, 1) 0%, rgba(63, 69, 182, 1) 100%);
+  padding: 15px;
+  border-radius: 10px;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas:
+    "check title delete"
+    "check desc delete";
+  gap: 6px 10px;
+  align-items: center;
+}
+
+li input[type="checkbox"] {
+  grid-area: check;
+  transform: scale(2);
+}
+
+li .title {
+  grid-area: title;
+  font-weight: bold;
+}
+
+li small {
+  grid-area: desc;
+  opacity: 0.8;
+}
+
+li button {
+  grid-area: delete;
+  background: none;
+  border: none;
+  transition: 0.5s;
+}
+
+li button:hover {
+  transform: scale(2);
+}
+
+ul#list {
+  padding: 0px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+li .title,
+li small {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  color: white;
+  padding: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(99, 15, 142);
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 10px;
+  left: -50px;
+}
+
+.dropdown-content button {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content .filter-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  color: white;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+.delete-cat-btn {
+  background: none;
+  border: none;
+  color: #ff5c5c;
+  font-size: 16px;
+  margin-left: 12px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.delete-cat-btn {
+  flex-shrink: 0;
+  transition: 0.5s;
+}
+
+.delete-cat-btn:hover {
+  transform: scale(2);
+}
+
+@media (max-width: 768px) {
+  nav.navbar {
+    max-width: 100%;
+  }
+
+  .menu-btn {
+    display: block;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+  nav .links {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+
+    
+  }
+
+  .dropdown:active .dropdown-content {
+    display: block;
+  }
+
+  nav .links.open {
+    max-height: fit-content;
+  }
+
+  nav .links button {
+    text-align: left;
+    padding: 0.75rem;
+  }
+
+  .dropdown-content {
+    left: 0; 
+    position: static;
+  }  
+}

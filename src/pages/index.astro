@@ -1,11 +1,46 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Navbar from "../components/Navbar.astro";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Todo App</title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+
+  <body>
+    <Navbar />
+
+    <main>
+      <!-- TASK FORM -->
+      <div id="overlay">
+        <div id="form">
+          <input id="name" placeholder="Task name" />
+          <input id="desc" placeholder="Task description" />
+          <select id="cat">
+          </select>
+          <button id="saveBtn">Opslaan</button>
+          <button id="cancelBtn">Annuleren</button>
+        </div>
+      </div>
+
+      <!-- CATEGORY FORM -->
+
+      <div id="overlay2">
+        <div id="form2">
+          <input id="name2" placeholder="category name" />
+          <button id="saveBtn2">Opslaan</button>
+          <button id="cancelBtn2">Annuleren</button>
+        </div>
+      </div>
+
+      <!-- TASK LIST -->
+
+      <ul id="list"></ul>
+    </main>
+
+    <script is:inline defer src="/js/script.js"></script>
+  </body>
+</html>
